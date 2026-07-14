@@ -3,10 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>⚡ Grade 12 General Math - Lesson 1-1: Functions (12Jen-math-T1-1.1-exam)</title>
+    <title>🧮 Functions Exam</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght=400;600;700;900&family=Inter:wght=400;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;900&family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
     <style>
         body { font-family: 'Cairo', sans-serif; }
         body.en-mode { font-family: 'Inter', sans-serif; }
@@ -25,7 +25,7 @@
             position: fixed; top: 16px; left: 16px; z-index: 100;
             background: white; padding: 6px; border-radius: 30px;
             box-shadow: 0 4px 15px rgba(0,0,0,0.15); display: flex; gap: 4px;
-            border: 2px solid #0d9488;
+            border: 2px solid #4f46e5;
         }
         [dir="ltr"] .lang-switch { left: auto; right: 16px; }
         .lang-btn {
@@ -33,8 +33,8 @@
             transition: all 0.3s; border: none; font-size: 0.875rem;
             background: transparent; color: #6b7280;
         }
-        .lang-btn.active { background: #0d9488; color: white; box-shadow: 0 2px 6px rgba(13,148,136,0.4); }
-        .lang-btn:hover:not(.active) { background: #f0fdfa; color: #0d9488; }
+        .lang-btn.active { background: #4f46e5; color: white; box-shadow: 0 2px 6px rgba(79,70,229,0.4); }
+        .lang-btn:hover:not(.active) { background: #eef2ff; color: #4f46e5; }
         .shuffle-badge {
             display: inline-block;
             background: linear-gradient(135deg, #f59e0b, #ef4444);
@@ -47,7 +47,7 @@
             animation: pulse 2s infinite;
         }
     </style>
-<script src="/_aistudio-iframe.js"></script></head>
+</head>
 <body class="bg-gray-50 text-gray-800 p-4 md:p-8 min-h-screen">
 
     <div class="lang-switch no-print">
@@ -56,24 +56,24 @@
     </div>
 
     <div id="timer-container" class="max-w-4xl mx-auto mb-4 text-center no-print">
-        <div class="bg-white p-4 rounded-xl shadow-md inline-block border-2 border-teal-100">
+        <div class="bg-white p-4 rounded-xl shadow-md inline-block border-2 border-indigo-100">
             <span class="text-gray-600 ml-2" data-ar="⏱️ الوقت المتبقي:" data-en="⏱️ Time Remaining:">⏱️ الوقت المتبقي:</span>
-            <span id="timer" class="text-2xl font-bold text-teal-600 font-mono">60:00</span>
+            <span id="timer" class="text-2xl font-bold text-indigo-600 font-mono">60:00</span>
             <span class="shuffle-badge" data-ar="🔀 أسئلة عشوائية" data-en="🔀 Random Questions">🔀 أسئلة عشوائية</span>
         </div>
     </div>
 
     <div class="max-w-4xl mx-auto mb-6 flex flex-wrap gap-3 justify-center no-print">
-        <button onclick="toggleAnswers()" class="bg-teal-600 hover:bg-teal-700 text-white px-5 py-2 rounded-lg font-medium transition shadow cursor-pointer" data-ar="👁️ إظهار / إخفاء الإجابات" data-en="👁️ Show / Hide Answers">👁️ إظهار / إخفاء الإجابات</button>
+        <button onclick="toggleAnswers()" class="bg-indigo-600 hover:bg-indigo-700 text-white px-5 py-2 rounded-lg font-medium transition shadow cursor-pointer" data-ar="👁️ إظهار / إخفاء الإجابات" data-en="👁️ Show / Hide Answers">👁️ إظهار / إخفاء الإجابات</button>
         <button onclick="window.print()" class="bg-gray-800 hover:bg-gray-900 text-white px-5 py-2 rounded-lg font-medium transition shadow cursor-pointer" data-ar="🖨️ طباعة / PDF" data-en="🖨️ Print / PDF">🖨️ طباعة / PDF</button>
-        <button onclick="reshuffleExam()" class="bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white px-5 py-2 rounded-lg font-medium transition shadow cursor-pointer" data-ar="🔀 إعادة خلط الأسئلة" data-en="🔀 Reshuffle Questions">🔀 إعادة خلط الأسئلة</button>
+        <button onclick="reshuffleExam()" class="bg-gradient-to-r from-indigo-600 to-violet-600 hover:from-indigo-700 hover:to-violet-700 text-white px-5 py-2 rounded-lg font-medium transition shadow cursor-pointer" data-ar="🔀 إعادة خلط الأسئلة" data-en="🔀 Reshuffle Questions">🔀 إعادة خلط الأسئلة</button>
     </div>
 
-    <header class="max-w-4xl mx-auto bg-white p-6 rounded-xl shadow-md mb-8 border-r-4 border-teal-600">
+    <header class="max-w-4xl mx-auto bg-white p-6 rounded-xl shadow-md mb-8 border-r-4 border-indigo-600">
         <div class="text-center">
-            <h1 class="text-2xl md:text-3xl font-bold text-gray-900 mb-2" data-ar="⚡ رياضيات الصف الثاني عشر عام" data-en="⚡ Grade 12 General Mathematics">⚡ رياضيات الصف الثاني عشر عام</h1>
-            <h2 class="text-lg text-teal-600 font-semibold" data-ar="الدرس 1-1: الدوال (الفصل الدراسي الأول)" data-en="Lesson 1-1: Functions (Term 1)">الدرس 1-1: الدوال (الفصل الدراسي الأول)</h2>
-            <p class="text-sm text-gray-600 mt-2" data-ar="اختبار شامل يغطي مفاهيم الدوال وتحديدها والمجال والمدى والمجال المضمن ورمز بناء المجموعة والفترة واختبار الخط الرأسي." data-en="Lesson 1-1: Functions complete interactive test aligned with Ministry syllabus.">اختبار شامل يغطي مفاهيم الدوال وتحديدها والمجال والمدى والمجال المضمن ورمز بناء المجموعة والفترة واختبار الخط الرأسي.</p>
+            <h1 class="text-2xl md:text-3xl font-bold text-gray-900 mb-2" data-ar="🧮 امتحان الدوال" data-en="🧮 Functions Exam">🧮 امتحان الدوال</h1>
+            <h2 class="text-lg text-indigo-600 font-semibold" data-ar="Functions" data-en="Functions">Functions</h2>
+            <p class="text-sm text-gray-600 mt-2" data-ar="أسئلة تغطي: وصف المجموعات برمز بناء المجموعة ورمز الفترة، تحديد الدوال واختبار الخط الرأسي، إيجاد قيم الدوال، إيجاد المجال جبرياً، والدوال متعددة التعريف" data-en="Covers: Describing Sets with Set-Builder & Interval Notation, Identifying Functions & the Vertical Line Test, Evaluating Functions, Finding Domain Algebraically, and Piecewise-Defined Functions">أسئلة تغطي: وصف المجموعات برمز بناء المجموعة ورمز الفترة، تحديد الدوال واختبار الخط الرأسي، إيجاد قيم الدوال، إيجاد المجال جبرياً، والدوال متعددة التعريف</p>
             <p class="text-xs text-orange-600 mt-2 font-semibold" data-ar="⚠️ ملاحظة: يتم خلط ترتيب الأسئلة والخيارات تلقائياً مع كل تحديث للصفحة" data-en="⚠️ Note: Questions and options are randomly shuffled on every page refresh">⚠️ ملاحظة: يتم خلط ترتيب الأسئلة والخيارات تلقائياً مع كل تحديث للصفحة</p>
         </div>
         <div class="mt-4 flex flex-wrap justify-center gap-4 text-sm text-gray-600">
@@ -81,7 +81,7 @@
             <span><span data-ar="👤 الاسم:" data-en="👤 Name:">👤 الاسم:</span> <input type="text" id="studentName" class="border-b border-gray-400 bg-transparent w-32 text-center" placeholder="Enter name"></span>
             <span><span data-ar="🏫 الشعبة:" data-en="🏫 Class:">🏫 الشعبة:</span> <input type="text" id="studentClass" class="border-b border-gray-400 bg-transparent w-28 text-center" placeholder="Class"></span>
             <span><span data-ar="⏱️ المدة: 60 دقيقة" data-en="⏱️ Duration: 60 min">⏱️ المدة: 60 دقيقة</span></span>
-            <span><span data-ar="📊 המجموع: 100 درجة" data-en="📊 Total: 100 pts">📊 المجموع: 100 درجة</span></span>
+            <span><span data-ar="📊 المجموع: 100 درجة" data-en="📊 Total: 100 pts">📊 المجموع: 100 درجة</span></span>
         </div>
     </header>
 
@@ -94,7 +94,7 @@
     <div id="results-panel" class="max-w-4xl mx-auto mt-8 bg-white p-8 rounded-2xl shadow-2xl border-t-4 border-emerald-500 hidden no-print">
         <h2 class="text-3xl font-bold text-gray-900 mb-6 text-center" data-ar="📊 نتائج الامتحان" data-en="📊 Exam Results">📊 نتائج الامتحان</h2>
         <div class="grid md:grid-cols-3 gap-4 mb-6">
-            <div class="bg-blue-50 p-4 rounded-xl text-center"><p data-ar="اسم الطالب" data-en="Student Name">اسم الطالب</p><p id="res-name" class="font-bold text-xl text-teal-700">-</p></div>
+            <div class="bg-blue-50 p-4 rounded-xl text-center"><p data-ar="اسم الطالب" data-en="Student Name">اسم الطالب</p><p id="res-name" class="font-bold text-xl text-indigo-700">-</p></div>
             <div class="bg-purple-50 p-4 rounded-xl text-center"><p data-ar="التاريخ" data-en="Date">التاريخ</p><p id="res-date" class="font-bold text-xl text-purple-700">-</p></div>
             <div class="bg-emerald-50 p-4 rounded-xl text-center"><p data-ar="المجموع" data-en="Score">المجموع</p><p id="res-total" class="font-bold text-3xl text-emerald-600">0 / 100</p></div>
         </div>
@@ -107,29 +107,29 @@
             <h3 class="font-bold text-lg mb-4 text-gray-800" data-ar="📈 تفصيل الأداء حسب القسم:" data-en="📈 Performance Breakdown:">📈 تفصيل الأداء حسب القسم:</h3>
             <div class="space-y-3">
                 <div class="flex justify-between items-center">
-                    <span class="text-gray-700" data-ar="الجزء الأول: المفاهيم والقواعد الأساسية والتعريفات" data-en="Part 1: Basic Concepts, Rules, and Definitions">الجزء الأول: المفاهيم والقواعد الأساسية والتعريفات</span>
-                    <span id="sec1-score" class="font-bold text-teal-600">0/4</span>
+                    <span class="text-gray-700" data-ar="وصف المجموعات برمز بناء المجموعة ورمز الفترة" data-en="Describing Sets with Set-Builder & Interval Notation">وصف المجموعات برمز بناء المجموعة ورمز الفترة</span>
+                    <span id="sec1-score" class="font-bold text-indigo-600">0/4</span>
                 </div>
                 <div class="flex justify-between items-center">
-                    <span class="text-gray-700" data-ar="الجزء الثاني: العمليات الحسابية والحلول العددية الدقيقة" data-en="Part 2: Calculations and Exact Numerical Solutions">الجزء الثاني: العمليات الحسابية والحلول العددية الدقيقة</span>
-                    <span id="sec2-score" class="font-bold text-teal-600">0/4</span>
+                    <span class="text-gray-700" data-ar="تحديد الدوال واختبار الخط الرأسي" data-en="Identifying Functions & the Vertical Line Test">تحديد الدوال واختبار الخط الرأسي</span>
+                    <span id="sec2-score" class="font-bold text-indigo-600">0/4</span>
                 </div>
                 <div class="flex justify-between items-center">
-                    <span class="text-gray-700" data-ar="الجزء الثالث: المهارات المتقدمة والتطبيقات والمسائل" data-en="Part 3: Advanced Skills, Applications, and Problems">الجزء الثالث: المهارات المتقدمة والتطبيقات والمسائل</span>
-                    <span id="sec3-score" class="font-bold text-teal-600">0/4</span>
+                    <span class="text-gray-700" data-ar="إيجاد قيم الدوال" data-en="Evaluating Functions">إيجاد قيم الدوال</span>
+                    <span id="sec3-score" class="font-bold text-indigo-600">0/4</span>
                 </div>
                 <div class="flex justify-between items-center">
-                    <span class="text-gray-700" data-ar="الجزء الرابع: النمذجة الرياضية والتمثيل البياني والمسائل العملية" data-en="Part 4: Mathematical Modeling, Graphing, and Practical Problems">الجزء الرابع: النمذجة الرياضية والتمثيل البياني والمسائل العملية</span>
-                    <span id="sec4-score" class="font-bold text-teal-600">0/4</span>
+                    <span class="text-gray-700" data-ar="إيجاد المجال جبرياً" data-en="Finding Domain Algebraically">إيجاد المجال جبرياً</span>
+                    <span id="sec4-score" class="font-bold text-indigo-600">0/4</span>
                 </div>
                 <div class="flex justify-between items-center">
-                    <span class="text-gray-700" data-ar="الجزء الخامس: مهارات التفكير العليا والتحليل والربط المنطقي" data-en="Part 5: Higher-Order Thinking, Analysis, and Logical Connections">الجزء الخامس: مهارات التفكير العليا والتحليل والربط المنطقي</span>
-                    <span id="sec5-score" class="font-bold text-teal-600">0/4</span>
+                    <span class="text-gray-700" data-ar="الدوال متعددة التعريف" data-en="Piecewise-Defined Functions">الدوال متعددة التعريف</span>
+                    <span id="sec5-score" class="font-bold text-indigo-600">0/4</span>
                 </div>
             </div>
         </div>
         <div class="text-center mb-6">
-            <button id="sendEmailBtn" onclick="sendResultsToEmail()" class="bg-gradient-to-r from-teal-600 to-cyan-600 hover:from-teal-700 hover:to-cyan-700 text-white text-lg px-8 py-3 rounded-xl font-bold shadow-xl transition transform hover:scale-105 cursor-pointer" data-ar="📧 إرسال النتائج للمعلم" data-en="📧 Send Results to Teacher">📧 إرسال النتائج للمعلم</button>
+            <button id="sendEmailBtn" onclick="sendResultsToEmail()" class="bg-gradient-to-r from-indigo-600 to-violet-600 hover:from-indigo-700 hover:to-violet-700 text-white text-lg px-8 py-3 rounded-xl font-bold shadow-xl transition transform hover:scale-105 cursor-pointer" data-ar="📧 إرسال النتائج للمعلم" data-en="📧 Send Results to Teacher">📧 إرسال النتائج للمعلم</button>
             <p id="emailStatus" class="text-sm mt-2 text-center font-medium"></p>
         </div>
         <div class="flex gap-3 justify-center">
@@ -138,10 +138,11 @@
     </div>
 
     <footer class="max-w-4xl mx-auto mt-10 mb-8 text-center text-gray-500 text-sm no-print">
-        © <span data-ar="رياضيات الصف 12 عام | الدرس 1-1: الدوال" data-en="Grade 12 General Math | Lesson 1-1: Functions">رياضيات الصف 12 عام | الدرس 1-1: الدوال</span> | Platform 4U Education
+        © <span data-ar="Functions" data-en="Functions">Functions</span> | Mr. Mohammed Hesham
     </footer>
 
 <script>
+// ==================== EmailJS Settings ====================
 const PUBLIC_KEY = "Rb3Lq8tXaFmc5YHUH";
 const SERVICE_ID = "service_w15m64i";
 const TEMPLATE_ID = "template_5b0u2tq";
@@ -150,627 +151,254 @@ const TARGET_EMAIL = "mohammedhesham872@gmail.com";
 emailjs.init(PUBLIC_KEY);
 
 const originalExamData = {
-    "title_ar": "الدرس 1-1: الدوال",
-    "title_en": "Lesson 1-1: Functions",
-    "desc_ar": "اختبار شامل يغطي مفاهيم الدوال وتحديدها والمجال والمدى والمجال المضمن ورمز بناء المجموعة والفترة واختبار الخط الرأسي.",
-    "sections": [
+    sections: [
         {
-            "title": {
-                "ar": "🔹 الجزء الأول: تعريف الدالة واختبار الخط الرأسي",
-                "en": "🔹 Part 1: تعريف الدالة واختبار الخط الرأسي"
-            },
-            "questions": [
+            id: 'sec1',
+            title: { ar: '🔹 الجزء الأول: وصف المجموعات برمز بناء المجموعة ورمز الفترة', en: '🔹 Part 1: Describing Sets with Set-Builder & Interval Notation' },
+            questions: [
                 {
-                    "q": {
-                        "ar": "ما المفهوم الأساسي المرتبط بـ تعريف الدالة واختبار الخط الرأسي؟",
-                        "en": "What is the basic concept associated with تعريف الدالة واختبار الخط الرأسي?"
-                    },
-                    "options": [
-                        {
-                            "ar": "العلاقة الرياضية الصحيحة والتمثيل الإحداثي الدقيق",
-                            "en": "The correct mathematical relation and accurate coordinate mapping"
-                        },
-                        {
-                            "ar": "حساب المعدلات الخطية للبيانات المستمرة فقط",
-                            "en": "Calculating linear rates for continuous data only"
-                        },
-                        {
-                            "ar": "تحليل القيم المطلقة واستبعاد الحلول التخيلية",
-                            "en": "Analyzing absolute values and excluding imaginary solutions"
-                        },
-                        {
-                            "ar": "دراسة سلوك طرفي الدالة عند اللانهاية دائماً",
-                            "en": "Studying the end behavior of a function at infinity always"
-                        }
+                    q: { ar: 'ما التمثيل الصحيح للمجموعة {8, 9, 10, 11, …} باستخدام رمز بناء المجموعة؟', en: 'What is the correct set-builder notation for the set {8, 9, 10, 11, …}?' },
+                    options: [
+                        { ar: '{x | x ≥ 8, x ∈ W}', en: '{x | x ≥ 8, x ∈ W}' },
+                        { ar: '{x | x > 8, x ∈ N}', en: '{x | x > 8, x ∈ N}' },
+                        { ar: '{x | x ≤ 8, x ∈ W}', en: '{x | x ≤ 8, x ∈ W}' },
+                        { ar: '{x | x ≥ 8, x ∈ Q}', en: '{x | x ≥ 8, x ∈ Q}' }
                     ],
-                    "correct": 0,
-                    "answer": {
-                        "ar": "المفهوم الأساسي يرتكز دائماً على إدراك القوانين الأساسية للعلاقات والدوال.",
-                        "en": "The basic concept always relies on understanding the core laws of relations and functions."
-                    }
+                    correct: 0,
+                    answer: { ar: 'المجموعة تضم جميع الأعداد الكلية الأكبر من 8 أو تساويها، فتُكتب {x | x ≥ 8, x ∈ W}', en: 'The set includes all whole numbers greater than or equal to 8, written as {x | x ≥ 8, x ∈ W}' }
                 },
                 {
-                    "q": {
-                        "ar": "أي مما يلي يعبر بدقة عن إحدى القواعد الأساسية لـ تعريف الدالة واختبار الخط الرأسي؟",
-                        "en": "Which of the following accurately expresses a basic rule for تعريف الدالة واختبار الخط الرأسي?"
-                    },
-                    "options": [
-                        {
-                            "ar": "القاعدة الأساسية التي تضمن الحصول على مخرجات وحيدة لكل مدخل حقيقي",
-                            "en": "The basic rule that ensures obtaining a unique output for each real input"
-                        },
-                        {
-                            "ar": "القاعدة التي تنفي تماماً ارتباط المتغيرات ذات الأسس الفردية",
-                            "en": "The rule that completely negates mapping variables with odd exponents"
-                        },
-                        {
-                            "ar": "القاعدة التي تقيد المجال للأعداد النسبية فقط",
-                            "en": "The rule that restricts the domain to rational numbers only"
-                        },
-                        {
-                            "ar": "قاعدة المساواة الصفرية لجميع المقادير الجبرية",
-                            "en": "The zero-equality rule for all algebraic expressions"
-                        }
+                    q: { ar: 'ما رمز الفترة الصحيح للمتباينة -8 < x ≤ 16؟', en: 'What is the correct interval notation for -8 < x ≤ 16?' },
+                    options: [
+                        { ar: '(-8, 16]', en: '(-8, 16]' },
+                        { ar: '[-8, 16)', en: '[-8, 16)' },
+                        { ar: '[-8, 16]', en: '[-8, 16]' },
+                        { ar: '(-8, 16)', en: '(-8, 16)' }
                     ],
-                    "correct": 0,
-                    "answer": {
-                        "ar": "تضمن القواعد الرياضية سلامة العلاقات وصحة المخرجات من مدخلاتها.",
-                        "en": "Mathematical rules ensure the soundness of relations and validity of outputs from inputs."
-                    }
+                    correct: 0,
+                    answer: { ar: 'بما أن -8 غير مضمنة (<) و16 مضمنة (≤)، فرمز الفترة هو (-8, 16]', en: 'Since -8 is not included (<) and 16 is included (≤), the interval notation is (-8, 16]' }
                 },
                 {
-                    "q": {
-                        "ar": "لماذا تعد دراسة تعريف الدالة واختبار الخط الرأسي خطوة ضرورية لحل المشكلات المتقدمة؟",
-                        "en": "Why is studying تعريف الدالة واختبار الخط الرأسي a necessary step for solving advanced problems?"
-                    },
-                    "options": [
-                        {
-                            "ar": "لأنها تضع الأساس المتين لفهم النماذج المعقدة وبناء الحلول البرمجية لها",
-                            "en": "Because it establishes the solid foundation for understanding complex models and coding their solutions"
-                        },
-                        {
-                            "ar": "لأنها تلغي الحاجة لاستخدام الحاسبات البيانية نهائياً",
-                            "en": "Because it completely eliminates the need for graphing calculators"
-                        },
-                        {
-                            "ar": "لأنها تعطي حلولاً تقريبية سريعة دون الحاجة للبرهان الجبري",
-                            "en": "Because it gives quick approximate solutions without algebraic proofs"
-                        },
-                        {
-                            "ar": "لأنها تفترض دائماً تماثل جميع الدوال الرياضية حركياً",
-                            "en": "Because it always assumes kinematics symmetry of all mathematical functions"
-                        }
+                    q: { ar: 'ما رمز الفترة الصحيح للمجموعة x ≤ -16 أو x > 5؟', en: 'What is the correct interval notation for x ≤ -16 or x > 5?' },
+                    options: [
+                        { ar: '(-∞, -16] ∪ (5, ∞)', en: '(-∞, -16] ∪ (5, ∞)' },
+                        { ar: '(-∞, -16) ∪ [5, ∞)', en: '(-∞, -16) ∪ [5, ∞)' },
+                        { ar: '(-16, 5)', en: '(-16, 5)' },
+                        { ar: '[-∞, -16] ∩ (5, ∞)', en: '[-∞, -16] ∩ (5, ∞)' }
                     ],
-                    "correct": 0,
-                    "answer": {
-                        "ar": "الفهم المبدئي للقواعد يسهل فك وتبسيط المشاكل المركبة لاحقاً.",
-                        "en": "Initial understanding of rules facilitates unfolding and simplifying composite problems later."
-                    }
+                    correct: 0,
+                    answer: { ar: 'بما أن هذه مجموعتان منفصلتان تُجمعان بعملية الاتحاد ∪، ورمز الفترة يكون (-∞, -16] ∪ (5, ∞)', en: 'Since these are two separate sets joined by the union operation ∪, the interval notation is (-∞, -16] ∪ (5, ∞)' }
                 },
                 {
-                    "q": {
-                        "ar": "أي الرموز المصطلحية التالية ترتبط بـ تعريف الدالة واختبار الخط الرأسي بشكل مباشر؟",
-                        "en": "Which of the following terminology symbols is directly associated with تعريف الدالة واختبار الخط الرأسي?"
-                    },
-                    "options": [
-                        {
-                            "ar": "الرموز المصطلحية المحددة لخصائص المجال والمدى والتقاربات",
-                            "en": "The specific terminology symbols defining domain, range, and asymptotes"
-                        },
-                        {
-                            "ar": "الرمز المعبر عن التغير اللحظي المتجه فقط",
-                            "en": "The symbol representing instantaneous vector change only"
-                        },
-                        {
-                            "ar": "الرمز المحدد لأصفار المقادير كثيرة الحدود الفردية",
-                            "en": "The symbol specifying zeros of odd polynomial expressions"
-                        },
-                        {
-                            "ar": "الرموز المصطلحية لتكامل وحساب المساحات السطحية",
-                            "en": "The terminology symbols for integration and surface area calculations"
-                        }
+                    q: { ar: 'ما الفرق بين استخدام الرمزين [ أو ] والرمزين ( أو ) في رمز الفترة؟', en: 'What is the difference between using [ or ] and ( or ) in interval notation?' },
+                    options: [
+                        { ar: '[ أو ] تشير إلى أن النقطة الطرفية تقع ضمن الفترة، بينما ( أو ) تشير إلى أنها لا تقع ضمن الفترة', en: '[ or ] indicate the endpoint is included in the interval, while ( or ) indicate it is not included' },
+                        { ar: '[ أو ] تُستخدم فقط للأعداد الموجبة', en: '[ or ] are used only for positive numbers' },
+                        { ar: '( أو ) تشير إلى اللانهاية دائماً', en: '( or ) always indicate infinity' },
+                        { ar: 'لا يوجد فرق بينهما', en: 'There is no difference between them' }
                     ],
-                    "correct": 0,
-                    "answer": {
-                        "ar": "تستخدم الرموز الرياضية لتكثيف التعبير عن العلاقات المعقدة بوضوح.",
-                        "en": "Mathematical symbols are used to concisely express complex relations clearly."
-                    }
+                    correct: 0,
+                    answer: { ar: 'الرمزان [ أو ] يستخدمان للإشارة إلى أن النقطة الطرفية تقع ضمن الفترة، بينما الرمزان ( أو ) يستخدمان للإشارة إلى أن النقطة الطرفية لا تقع ضمن الفترة', en: 'The symbols [ or ] indicate the endpoint lies within the interval, while ( or ) indicate the endpoint does not lie within the interval' }
                 }
             ]
         },
         {
-            "title": {
-                "ar": "🔹 الجزء الثاني: المجال والمدى والمجال المضمن للدوال الكسرية والجذرية",
-                "en": "🔹 Part 2: المجال والمدى والمجال المضمن للدوال الكسرية والجذرية"
-            },
-            "questions": [
+            id: 'sec2',
+            title: { ar: '🔹 الجزء الثاني: تحديد الدوال واختبار الخط الرأسي', en: '🔹 Part 2: Identifying Functions & the Vertical Line Test' },
+            questions: [
                 {
-                    "q": {
-                        "ar": "أوجد القيمة العددية الدقيقة للتعبير المرتبط بـ المجال والمدى والمجال المضمن للدوال الكسرية والجذرية عند التعويض بالقيم المرجعية؟",
-                        "en": "Find the exact numerical value of the expression associated with المجال والمدى والمجال المضمن للدوال الكسرية والجذرية upon reference substitution?"
-                    },
-                    "options": [
-                        {
-                            "ar": "القيمة العددية الدقيقة المحسوبة باتباع الترتيب الجبري الصارم للعمليات الحسابية",
-                            "en": "The exact numerical value calculated by following the strict algebraic order of operations"
-                        },
-                        {
-                            "ar": "قيمة تقريبية تقرب لأقرب جزء من عشرة آلاف",
-                            "en": "An approximate value rounded to the nearest ten-thousandth"
-                        },
-                        {
-                            "ar": "صفر دائم بسبب انعدام المقادير الفردية في المعادلة",
-                            "en": "Zero always due to the vanishing of odd expressions in the equation"
-                        },
-                        {
-                            "ar": "قيمة تخيلية تشتمل على المركب التخيلي المباشر i",
-                            "en": "An imaginary value comprising the direct imaginary unit i"
-                        }
+                    q: { ar: 'ما تعريف الدالة f من المجموعة A إلى المجموعة B؟', en: 'What is the definition of a function f from set A to set B?' },
+                    options: [
+                        { ar: 'علاقة تربط كل عنصر x في المجموعة A مع عنصر واحد فقط y في المجموعة B', en: 'A relation that pairs each element x in set A with exactly one element y in set B' },
+                        { ar: 'علاقة تربط كل عنصر x في المجموعة A مع أكثر من عنصر في المجموعة B', en: 'A relation that pairs each element x in set A with more than one element in set B' },
+                        { ar: 'أي مجموعة من الأزواج المرتبة بغض النظر عن تكرار قيم x', en: 'Any set of ordered pairs regardless of repeated x values' },
+                        { ar: 'علاقة تربط بين عنصرين من نفس المجموعة فقط', en: 'A relation that pairs two elements from the same set only' }
                     ],
-                    "correct": 0,
-                    "answer": {
-                        "ar": "التعويض الدقيق يعطي القيمة العددية الصحيحة الخالية من التقريب العشوائي.",
-                        "en": "Exact substitution gives the correct numerical value free from random approximation."
-                    }
+                    correct: 0,
+                    answer: { ar: 'الدالة f من المجموعة A إلى المجموعة B هي علاقة تربط كل عنصر x في المجموعة A مع عنصر واحد فقط y في المجموعة B', en: 'A function f from set A to set B is a relation that pairs each element x in set A with exactly one element y in set B' }
                 },
                 {
-                    "q": {
-                        "ar": "ما هي النتيجة الصحيحة لتبسيط المقدار الرياضي الممثل لـ المجال والمدى والمجال المضمن للدوال الكسرية والجذرية؟",
-                        "en": "What is the correct result of simplifying the mathematical expression representing المجال والمدى والمجال المضمن للدوال الكسرية والجذرية?"
-                    },
-                    "options": [
-                        {
-                            "ar": "المقدار المبسط كلياً الذي يختزل جميع الحدود المتشابهة في صياغة واحدة",
-                            "en": "The fully simplified expression that reduces all like terms into a single formulation"
-                        },
-                        {
-                            "ar": "مقدار من الدرجة الثامنة يشتمل على معاملات غير صحيحة",
-                            "en": "An eighth-degree expression containing non-integer coefficients"
-                        },
-                        {
-                            "ar": "تعبير لا خطي يؤول دائماً لمالانهاية الموجبة والسالبة",
-                            "en": "A non-linear expression always leading to positive and negative infinity"
-                        },
-                        {
-                            "ar": "مقدار صفري ينعدم تماماً عند جميع النقاط الحقيقية",
-                            "en": "A zero expression that vanishes completely at all real points"
-                        }
+                    q: { ar: 'ما "اختبار الخط المستقيم الرأسي" لتحديد ما إذا كان التمثيل البياني يمثل دالة؟', en: 'What is the "vertical line test" for determining whether a graph represents a function?' },
+                    options: [
+                        { ar: 'يكون التمثيل البياني دالة إذا تقاطع كل مستقيم رأسي محتمل معه في نقطة واحدة على الأكثر', en: 'A graph represents a function if every possible vertical line intersects it at most once' },
+                        { ar: 'يكون التمثيل البياني دالة إذا تقاطع كل مستقيم أفقي معه في نقطة واحدة فقط', en: 'A graph represents a function if every horizontal line intersects it exactly once' },
+                        { ar: 'يكون التمثيل البياني دالة إذا مر بنقطة الأصل', en: 'A graph represents a function if it passes through the origin' },
+                        { ar: 'يكون التمثيل البياني دالة إذا كان متماثلاً حول المحور y', en: 'A graph represents a function if it is symmetric about the y-axis' }
                     ],
-                    "correct": 0,
-                    "answer": {
-                        "ar": "تبسيط المقادير يسهل تحليل خصائصها ورسم منحنياتها بيانيا.",
-                        "en": "Simplifying expressions makes it easier to analyze their properties and graph them."
-                    }
+                    correct: 0,
+                    answer: { ar: 'تكون مجموعة النقاط في المستوى الإحداثي هي التمثيل البياني لدالة إذا تقاطع كل مستقيم رأسي محتمل مع التمثيل البياني في نقطة واحدة على الأكثر', en: 'A set of points in the coordinate plane is the graph of a function if every possible vertical line intersects the graph at most once' }
                 },
                 {
-                    "q": {
-                        "ar": "إذا قمنا بالتعويض في دالة المجال والمدى والمجال المضمن للدوال الكسرية والجذرية بالمتغير المستقل المضاف، فما هو التعبير الناتج؟",
-                        "en": "If we substitute into the function of المجال والمدى والمجال المضمن للدوال الكسرية والجذرية with the shifted independent variable, what is the resulting expression?"
-                    },
-                    "options": [
-                        {
-                            "ar": "التعبير الجبري المزاح الذي يعكس التحويل المطلوب بدقة متناهية",
-                            "en": "The shifted algebraic expression that reflects the required transformation with absolute accuracy"
-                        },
-                        {
-                            "ar": "نفس التعبير الأصلي دون أي تغيير في المعاملات أو الأسس",
-                            "en": "The same original expression without any change in coefficients or exponents"
-                        },
-                        {
-                            "ar": "تعبير خطي بسيط يخلو من المتغير المستقل الأصلي",
-                            "en": "A simple linear expression devoid of the original independent variable"
-                        },
-                        {
-                            "ar": "مقدار غير معرف بسبب وقوع الصفر في مقام الكسر",
-                            "en": "An undefined expression due to zero occurring in the fraction's denominator"
-                        }
+                    q: { ar: 'إذا مثلت قيمة المدخل x رقم بطاقة تعريف طالب، ومثلت قيمة المخرج y درجته في اختبار الفيزياء، فهل تمثل هذه العلاقة y كدالة من x؟', en: "If the input x represents a student's ID number and the output y represents their physics test score, does this relation represent y as a function of x?" },
+                    options: [
+                        { ar: 'نعم، لأن كل طالب (قيمة x) لا يمكن أن يحصل على أكثر من درجة واحدة (قيمة y)', en: 'Yes, because each student (x value) cannot have more than one score (y value)' },
+                        { ar: 'لا، لأن قيم y يمكن أن تتكرر لعدة طلاب', en: 'No, because y values can repeat for multiple students' },
+                        { ar: 'لا، لأن رقم البطاقة ليس عدداً حقيقياً', en: 'No, because the ID number is not a real number' },
+                        { ar: 'لا يمكن تحديد ذلك دون مزيد من المعلومات', en: 'This cannot be determined without more information' }
                     ],
-                    "correct": 0,
-                    "answer": {
-                        "ar": "التعويض بالمتغير المزاح يعيد تشكيل الدالة لتعكس التحويل الهندسي الحاصل.",
-                        "en": "Substituting with a shifted variable reshapes the function to reflect the geometric transformation."
-                    }
+                    correct: 0,
+                    answer: { ar: 'كل قيمة من قيم x لا يمكن تخصيصها لأكثر من قيمة واحدة من قيم y، فالطالب لا يمكن أن يحصل على درجتين مختلفتين في نفس الاختبار، إذاً الجملة تصف y كدالة من x', en: 'Each x value cannot be assigned more than one y value since a student cannot get two different scores on the same test, so the relation describes y as a function of x' }
                 },
                 {
-                    "q": {
-                        "ar": "ما هي أصفار المعادلة أو نقاط الحل المرتبطة بـ المجال والمدى والمجال المضمن للدوال الكسرية والجذرية؟",
-                        "en": "What are the equation zeros or solution points associated with المجال والمدى والمجال المضمن للدوال الكسرية والجذرية?"
-                    },
-                    "options": [
-                        {
-                            "ar": "القيم العددية الدقيقة التي تحقق المعادلة وتجعل الدالة مساوية للصفر تماماً",
-                            "en": "The exact numerical values that satisfy the equation and make the function strictly equal to zero"
-                        },
-                        {
-                            "ar": "القيم السالبة فقط التي تقع ضمن فترات الاختبار غير الحقيقية",
-                            "en": "The negative values only that fall within non-real test intervals"
-                        },
-                        {
-                            "ar": "النقاط التي تتقاطع عندها الدالة مع خطوط التقارب المائلة",
-                            "en": "The points where the function intersects the oblique asymptotes"
-                        },
-                        {
-                            "ar": "أعداد حقيقية تزيد بمقدار الثابت التأسيسي للمحور الصادي",
-                            "en": "Real numbers shifted by the starting constant of the y-axis"
-                        }
+                    q: { ar: 'هل المعادلة y² - 2x = 5 تمثل y كدالة من x؟', en: 'Does the equation y² - 2x = 5 represent y as a function of x?' },
+                    options: [
+                        { ar: 'لا، لأنه يوجد قيمتان لـ y (إحداهما موجبة والأخرى سالبة) لأي قيمة من x أكبر من -2.5', en: 'No, because there are two values of y (one positive, one negative) for any x value greater than -2.5' },
+                        { ar: 'نعم، لأن كل قيمة x تعطي قيمة y واحدة فقط', en: 'Yes, because each x value gives exactly one y value' },
+                        { ar: 'نعم، لأن المعادلة خطية', en: 'Yes, because the equation is linear' },
+                        { ar: 'لا يمكن تحديد ذلك جبرياً', en: 'This cannot be determined algebraically' }
                     ],
-                    "correct": 0,
-                    "answer": {
-                        "ar": "أصفار الدالة هي الحلول الجبرية الدقيقة الناتجة عن تصفير المعادلة.",
-                        "en": "The zeros of a function are the exact algebraic solutions resulting from setting the equation to zero."
-                    }
+                    correct: 0,
+                    answer: { ar: 'بحل المعادلة لإيجاد y نحصل على y = ±√(5+2x)، وهذا يعطي قيمتين لـ y (موجبة وسالبة) لأي x أكبر من -2.5، لذا فالمعادلة لا تمثل y كدالة من x', en: 'Solving for y gives y = ±√(5+2x), which produces two y values (positive and negative) for any x greater than -2.5, so the equation does not represent y as a function of x' }
                 }
             ]
         },
         {
-            "title": {
-                "ar": "🔹 الجزء الثالث: رمز بناء المجموعة ورمز الفترة",
-                "en": "🔹 Part 3: رمز بناء المجموعة ورمز الفترة"
-            },
-            "questions": [
+            id: 'sec3',
+            title: { ar: '🔹 الجزء الثالث: إيجاد قيم الدوال', en: '🔹 Part 3: Evaluating Functions' },
+            questions: [
                 {
-                    "q": {
-                        "ar": "ما هي المهارة الحسابية المتقدمة التي يجب تطبيقها لحل مشكلات رمز بناء المجموعة ورمز الفترة؟",
-                        "en": "What advanced calculation skill must be applied to solve problems of رمز بناء المجموعة ورمز الفترة?"
-                    },
-                    "options": [
-                        {
-                            "ar": "التحليل الجبري الشامل وتحديد الشروط والقيود المفروضة على المتغيرات بدقة",
-                            "en": "Comprehensive algebraic analysis and strictly defining the conditions and constraints on variables"
-                        },
-                        {
-                            "ar": "استبدال جميع الثوابت بقيم عشوائية لتجربتها بالاختيار المتعدد",
-                            "en": "Replacing all constants with random values to test them via multiple choice"
-                        },
-                        {
-                            "ar": "استخدام الآلة الحاسبة دون الحاجة لفهم الخطوات التفصيلية للحل",
-                            "en": "Using the calculator without needing to understand the detailed solution steps"
-                        },
-                        {
-                            "ar": "الاعتماد على التقريب الهندسي السريع للمنحنيات اللانهائية",
-                            "en": "Relying on quick geometric approximation of infinite curves"
-                        }
+                    q: { ar: 'إذا كانت g(x) = x² + 8x - 24، فما قيمة g(6)؟', en: 'If g(x) = x² + 8x - 24, what is g(6)?' },
+                    options: [
+                        { ar: '60', en: '60' },
+                        { ar: '48', en: '48' },
+                        { ar: '36', en: '36' },
+                        { ar: '84', en: '84' }
                     ],
-                    "correct": 0,
-                    "answer": {
-                        "ar": "المهارات المتقدمة تشتمل على التحليل الرياضي المنطقي وتتبع الخطوات بدقة.",
-                        "en": "Advanced skills comprise logical mathematical analysis and tracking steps carefully."
-                    }
+                    correct: 0,
+                    answer: { ar: 'g(6) = (6)² + 8(6) - 24 = 36 + 48 - 24 = 60', en: 'g(6) = (6)² + 8(6) - 24 = 36 + 48 - 24 = 60' }
                 },
                 {
-                    "q": {
-                        "ar": "كيف نتحقق من صحة الحل الجبري لـ رمز بناء المجموعة ورمز الفترة؟",
-                        "en": "How do we verify the validity of the algebraic solution for رمز بناء المجموعة ورمز الفترة?"
-                    },
-                    "options": [
-                        {
-                            "ar": "بالتعويض بالحلول في المعادلة الأصلية والتأكد من تحقيقها للتساوي أو الشرط",
-                            "en": "By substituting the solutions into the original equation and ensuring they satisfy the equality or condition"
-                        },
-                        {
-                            "ar": "بمقارنتها بالرسوم التوضيحية التقريبية لدروس أخرى مختلفة",
-                            "en": "By comparing them with approximate illustrations of other different lessons"
-                        },
-                        {
-                            "ar": "بافتراض أن جميع الحلول الناتجة صحيحة دون الحاجة لأي تحقق إضافي",
-                            "en": "By assuming all resulting solutions are correct without any additional verification"
-                        },
-                        {
-                            "ar": "عن طريق تحويل جميع القيم الحقيقية إلى أعداد مركبة تخيلية دائمأ",
-                            "en": "By transforming all real values into complex imaginary numbers always"
-                        }
+                    q: { ar: 'إذا كانت g(x) = x² + 8x - 24، فما الصيغة المبسطة لـ g(-4x)؟', en: 'If g(x) = x² + 8x - 24, what is the simplified form of g(-4x)?' },
+                    options: [
+                        { ar: '16x² - 32x - 24', en: '16x² - 32x - 24' },
+                        { ar: '-16x² + 32x - 24', en: '-16x² + 32x - 24' },
+                        { ar: '16x² + 32x - 24', en: '16x² + 32x - 24' },
+                        { ar: '-4x² - 32x - 24', en: '-4x² - 32x - 24' }
                     ],
-                    "correct": 0,
-                    "answer": {
-                        "ar": "التحقق من الحلول يضمن استبعاد الحلول الدخيلة والتأكد من دقة العمل الجبري.",
-                        "en": "Verifying solutions ensures excluding extraneous solutions and validating the algebraic work."
-                    }
+                    correct: 0,
+                    answer: { ar: 'g(-4x) = (-4x)² + 8(-4x) - 24 = 16x² - 32x - 24', en: 'g(-4x) = (-4x)² + 8(-4x) - 24 = 16x² - 32x - 24' }
                 },
                 {
-                    "q": {
-                        "ar": "ما هي الأخطاء الشائعة التي يجب تجنبها عند دراسة رمز بناء المجموعة ورمز الفترة؟",
-                        "en": "What are the common errors to avoid when studying رمز بناء المجموعة ورمز الفترة?"
-                    },
-                    "options": [
-                        {
-                            "ar": "إغفال قيود المجال وشروط المعرفات مثل تجنب الصفر في المقام أو المقادير السالبة تحت الجذر الزوجي",
-                            "en": "Overlooking domain constraints and defined conditions like avoiding zero in denominator or negative values under even roots"
-                        },
-                        {
-                            "ar": "كتابة الرموز الرياضية بخط اليد بدلاً من طباعتها بالحاسوب",
-                            "en": "Writing mathematical symbols by hand instead of typing them on a computer"
-                        },
-                        {
-                            "ar": "استخدام ورق الرسم البياني غير المسطر بدقة",
-                            "en": "Using graph paper that is not ruled with absolute precision"
-                        },
-                        {
-                            "ar": "اعتبار جميع الدوال الأسية دوال لوغاريتمية طبيعية دائماً",
-                            "en": "Considering all exponential functions as natural logarithmic functions always"
-                        }
+                    q: { ar: 'في رمز الدالة f(x)، ماذا يعني هذا الرمز؟', en: 'In function notation f(x), what does this notation mean?' },
+                    options: [
+                        { ar: 'يُقرأ "الدالة f عند x" ويعني قيمة الدالة f عند x، أي f(x) تقابل قيمة y', en: 'It reads "f of x" and means the value of function f at x; f(x) corresponds to the value y' },
+                        { ar: 'يعني حاصل ضرب f في x', en: 'It means the product of f and x' },
+                        { ar: 'يعني أن f و x متساويان دائماً', en: 'It means f and x are always equal' },
+                        { ar: 'يُستخدم فقط مع الدوال الخطية', en: 'It is used only with linear functions' }
                     ],
-                    "correct": 0,
-                    "answer": {
-                        "ar": "تجنب الأخطاء الشائعة يحمي الطالب من ارتكاب هفوات حسابية تضيع صحة النواتج.",
-                        "en": "Avoiding common errors protects students from making computational slips that compromise results."
-                    }
+                    correct: 0,
+                    answer: { ar: 'الرمز f(x) يُقرأ "الدالة f عند x" ويعني قيمة الدالة f عند x، وبما أن f(x) تقابل قيمة y في الدالة، يمكن الكتابة بالصورة y=f(x)', en: 'The notation f(x) reads "f of x" and means the value of function f at x; since f(x) corresponds to y, it can be written as y=f(x)' }
                 },
                 {
-                    "q": {
-                        "ar": "أي من الحالات التالية تعبر عن تطبيق متقدم لـ رمز بناء المجموعة ورمز الفترة؟",
-                        "en": "Which of the following cases expresses an advanced application of رمز بناء المجموعة ورمز الفترة?"
-                    },
-                    "options": [
-                        {
-                            "ar": "تحليل الأنظمة الديناميكية وحساب فترات الثبات ومعدلات التغير للمتغيرات المعقدة",
-                            "en": "Analyzing dynamic systems and calculating stability intervals and rates of change for complex variables"
-                        },
-                        {
-                            "ar": "رسم أشكال هندسية بسيطة كالمستطيلات والمربعات يدوياً",
-                            "en": "Drawing simple geometric shapes like rectangles and squares by hand"
-                        },
-                        {
-                            "ar": "حساب العمليات الحسابية الأساسية للجمع والطرح الحسابي البسيط",
-                            "en": "Calculating basic arithmetic operations for simple addition and subtraction"
-                        },
-                        {
-                            "ar": "استبدال نظام الأرقام العشري بنظام العد الثنائي الإلكتروني",
-                            "en": "Substituting the decimal number system with the binary electronic system"
-                        }
+                    q: { ar: 'في الدالة، ماذا يُسمى المتغير x وماذا يُسمى المتغير y (أو f(x))؟', en: 'In a function, what is the variable x called, and what is the variable y (or f(x)) called?' },
+                    options: [
+                        { ar: 'x يُسمى المتغير المستقل، وy يُسمى المتغير التابع', en: 'x is called the independent variable, and y is called the dependent variable' },
+                        { ar: 'x يُسمى المتغير التابع، وy يُسمى المتغير المستقل', en: 'x is called the dependent variable, and y is called the independent variable' },
+                        { ar: 'كلاهما يُسمى متغيرات مستقلة', en: 'Both are called independent variables' },
+                        { ar: 'كلاهما يُسمى متغيرات تابعة', en: 'Both are called dependent variables' }
                     ],
-                    "correct": 0,
-                    "answer": {
-                        "ar": "تطبيقات الدوال كثيرة ومتشعبة في مجالات العلوم والهندسة والنمذجة الرياضية.",
-                        "en": "Function applications are numerous and diverse in science, engineering, and mathematical modeling."
-                    }
+                    correct: 0,
+                    answer: { ar: 'بما أن x قد تمثل أي قيمة في مجال الدالة، يُطلق عليها المتغير المستقل، بينما أي قيمة في مدى الدالة f يُعبر عنها بالمتغير التابع y', en: 'Since x may represent any value in the domain of the function, it is called the independent variable, while any value in the range of f is expressed by the dependent variable y' }
                 }
             ]
         },
         {
-            "title": {
-                "ar": "🔹 الجزء الرابع: التعويض في الدوال وتبسيط التعبيرات الجبرية",
-                "en": "🔹 Part 4: التعويض في الدوال وتبسيط التعبيرات الجبرية"
-            },
-            "questions": [
+            id: 'sec4',
+            title: { ar: '🔹 الجزء الرابع: إيجاد المجال جبرياً', en: '🔹 Part 4: Finding Domain Algebraically' },
+            questions: [
                 {
-                    "q": {
-                        "ar": "كيف تستخدم التعويض في الدوال وتبسيط التعبيرات الجبرية في حل المسائل التطبيقية والعملية؟",
-                        "en": "How is التعويض في الدوال وتبسيط التعبيرات الجبرية used in solving applied and practical problems?"
-                    },
-                    "options": [
-                        {
-                            "ar": "بتحويل النص اللفظي للمشكلة إلى معادلة رياضية دقيقة وحلها وفقاً للأساليب الجبرية المعتمدة",
-                            "en": "By translating the verbal problem into an accurate mathematical equation and solving it using approved algebraic methods"
-                        },
-                        {
-                            "ar": "برسم مخططات تقريبية ملونة دون الالتزام بالقيم والبيانات الواردة في السؤال",
-                            "en": "By drawing colorful approximate charts without adhering to the values and data in the question"
-                        },
-                        {
-                            "ar": "بافتراض أن الحل دائماً يؤول للرقم عشرة أو الصفر لسهولة التدوين",
-                            "en": "By assuming the solution always leads to ten or zero for easy recording"
-                        },
-                        {
-                            "ar": "بالاعتماد على التجربة العملية المتكررة داخل المختبرات فقط",
-                            "en": "By relying on repeated physical experimentation in laboratories only"
-                        }
+                    q: { ar: 'ما مجال الدالة f(x) = (2+x)/(x²-7x)؟', en: 'What is the domain of f(x) = (2+x)/(x²-7x)?' },
+                    options: [
+                        { ar: '{x | x ≠ 0, x ≠ 7, x ∈ R}', en: '{x | x ≠ 0, x ≠ 7, x ∈ R}' },
+                        { ar: '{x | x ≠ -2, x ∈ R}', en: '{x | x ≠ -2, x ∈ R}' },
+                        { ar: '{x | x ≥ 0, x ∈ R}', en: '{x | x ≥ 0, x ∈ R}' },
+                        { ar: 'جميع الأعداد الحقيقية بدون استثناء', en: 'All real numbers with no exceptions' }
                     ],
-                    "correct": 0,
-                    "answer": {
-                        "ar": "النمذجة الرياضية هي عملية تحويل الظواهر الحياتية إلى نماذج رياضية يمكن حلها وتحليلها.",
-                        "en": "Mathematical modeling is the process of converting real-world phenomena into mathematical models that can be solved and analyzed."
-                    }
+                    correct: 0,
+                    answer: { ar: 'يجب استبعاد القيم التي تجعل المقام يساوي صفراً؛ بحل x²-7x=0 نجد x=0 وx=7، لذا المجال هو جميع الأعداد الحقيقية ما عدا 0 و7', en: 'Values that make the denominator zero must be excluded; solving x²-7x=0 gives x=0 and x=7, so the domain is all reals except 0 and 7' }
                 },
                 {
-                    "q": {
-                        "ar": "ما الأهمية العملية لدراسة التعويض في الدوال وتبسيط التعبيرات الجبرية في التخطيط واتخاذ القرارات؟",
-                        "en": "What is the practical importance of studying التعويض في الدوال وتبسيط التعبيرات الجبرية in planning and decision making?"
-                    },
-                    "options": [
-                        {
-                            "ar": "التنبؤ الدقيق بالقيم المستقبلية وتحديد الحدود القصوى والدنيا للمتغيرات المؤثرة كالأرباح والتكاليف",
-                            "en": "Accurately forecasting future values and determining maximum and minimum limits for influential variables like profits and costs"
-                        },
-                        {
-                            "ar": "الاستغناء الكامل عن الكوادر البشرية في مجالات الإحصاء الرياضي",
-                            "en": "Complete elimination of human personnel in mathematical statistics fields"
-                        },
-                        {
-                            "ar": "إثبات أن جميع المشاكل الحياتية يمكن تمثيلها بخطوط مستقيمة بسيطة دائماً",
-                            "en": "Proving that all real-life problems can always be represented by simple straight lines"
-                        },
-                        {
-                            "ar": "تقليص الفترات الزمنية اللازمة لتصنيع المنتجات بشكل يدوي",
-                            "en": "Reducing time intervals required for manufacturing products manually"
-                        }
+                    q: { ar: 'ما مجال الدالة g(t) = √(t-5)؟', en: 'What is the domain of g(t) = √(t-5)?' },
+                    options: [
+                        { ar: 'جميع الأعداد الحقيقية t بحيث t ≥ 5، أو [5,∞)', en: 'All real numbers t such that t ≥ 5, or [5,∞)' },
+                        { ar: 'جميع الأعداد الحقيقية t بحيث t ≤ 5', en: 'All real numbers t such that t ≤ 5' },
+                        { ar: 'جميع الأعداد الحقيقية بدون استثناء', en: 'All real numbers with no exceptions' },
+                        { ar: 'جميع الأعداد الحقيقية t بحيث t ≠ 5', en: 'All real numbers t such that t ≠ 5' }
                     ],
-                    "correct": 0,
-                    "answer": {
-                        "ar": "تساعد دراسة النماذج الرياضية في بناء خطط استراتيجية مستندة إلى تقديرات وتنبؤات علمية دقيقة.",
-                        "en": "Studying mathematical models helps build strategic plans based on highly accurate scientific estimates and forecasts."
-                    }
+                    correct: 0,
+                    answer: { ar: 'لأن الجذر التربيعي لعدد سالب لا يمكن أن يكون عدداً حقيقياً، يجب أن يكون t-5 ≥ 0، أي t ≥ 5، فمجال g(t) هو [5,∞)', en: 'Since the square root of a negative number cannot be a real number, t-5 must be ≥ 0, i.e., t ≥ 5, so the domain of g(t) is [5,∞)' }
                 },
                 {
-                    "q": {
-                        "ar": "كيف يمثل سلوك التعويض في الدوال وتبسيط التعبيرات الجبرية بيانياً لتسهيل فهم وتفسير النتائج؟",
-                        "en": "How is the behavior of التعويض في الدوال وتبسيط التعبيرات الجبرية graphed to facilitate understanding and interpreting results?"
-                    },
-                    "options": [
-                        {
-                            "ar": "برسم منحنيات ناعمة ومستمرة تعكس خصائص الدالة وتظهر نقاط التقاطع والتماثل والتقارب بوضوح",
-                            "en": "By drawing smooth, continuous curves reflecting function properties, clearly showing intersections, symmetry, and asymptotes"
-                        },
-                        {
-                            "ar": "برسم مضلعات حادة الزوايا غير مستمرة على الإطلاق",
-                            "en": "By drawing sharp-angled polygons that are not continuous at all"
-                        },
-                        {
-                            "ar": "بتلوين المساحات المحصورة أسفل المنحنى بألوان زاهية مختلفة",
-                            "en": "By coloring the areas bounded below the curve with different bright colors"
-                        },
-                        {
-                            "ar": "بمحاكاة ثلاثية الأبعاد تعتمد على برمجيات التصميم المعماري الصرف",
-                            "en": "By 3D simulations relying purely on architectural design software"
-                        }
+                    q: { ar: 'عند إيجاد المجال المضمن لدالة، ما القيم التي يجب استثناؤها بوجه عام؟', en: 'When finding the implied domain of a function, what values should generally be excluded?' },
+                    options: [
+                        { ar: 'القيم التي تؤدي إلى القسمة على صفر أو أخذ الجذر الزوجي لعدد سالب', en: 'Values that lead to division by zero or taking an even root of a negative number' },
+                        { ar: 'جميع القيم السالبة بغض النظر عن نوع الدالة', en: 'All negative values regardless of the type of function' },
+                        { ar: 'القيم الصحيحة فقط', en: 'Integer values only' },
+                        { ar: 'القيم الأكبر من 100', en: 'Values greater than 100' }
                     ],
-                    "correct": 0,
-                    "answer": {
-                        "ar": "التمثيل البياني يجسد سلوك الدوال المعقدة بطريقة بصرية سهلة القراءة والتحليل.",
-                        "en": "Graphing embodies the behavior of complex functions in a visual, easy-to-read, and analyze format."
-                    }
+                    correct: 0,
+                    answer: { ar: 'بوجه عام، يجب أن تُستثنى من مجال الدالة القيم التي تؤدي إلى القسمة على صفر أو أخذ الجذر الزوجي لعدد سالب', en: 'In general, values that lead to division by zero or taking an even root of a negative number must be excluded from the domain of the function' }
                 },
                 {
-                    "q": {
-                        "ar": "أي مما يلي يمثل سيناريو عملي واقعي لتطبيق التعويض في الدوال وتبسيط التعبيرات الجبرية؟",
-                        "en": "Which of the following represents a realistic practical scenario for applying التعويض في الدوال وتبسيط التعبيرات الجبرية?"
-                    },
-                    "options": [
-                        {
-                            "ar": "حساب تغير درجات حرارة الغلاف الجوي أو حساب التكاثر البكتيري ونمو السكان والشركات عبر الزمن",
-                            "en": "Calculating atmospheric temperature variations or bacterial growth, population growth, and company expansion over time"
-                        },
-                        {
-                            "ar": "ترتيب الكتب في المكتبات المدرسية بناء على الحجم والوزن",
-                            "en": "Arranging books in school libraries based on size and weight"
-                        },
-                        {
-                            "ar": "تصنيف الحيوانات الأليفة في حدائق الحيوان بناء على فصائلها الحيوية",
-                            "en": "Classifying domestic animals in zoos based on their biological families"
-                        },
-                        {
-                            "ar": "حساب السرعة القصوى للقطارات البخارية القديمة في القرن التاسع عشر",
-                            "en": "Calculating the top speed of old steam trains in the nineteenth century"
-                        }
+                    q: { ar: 'ما مجال الدالة h(x) = 1/√(x²-9)؟', en: 'What is the domain of h(x) = 1/√(x²-9)?' },
+                    options: [
+                        { ar: '(-∞, -3) ∪ (3, ∞)', en: '(-∞, -3) ∪ (3, ∞)' },
+                        { ar: '[-3, 3]', en: '[-3, 3]' },
+                        { ar: '(-∞, -3] ∪ [3, ∞)', en: '(-∞, -3] ∪ [3, ∞)' },
+                        { ar: '(-3, 3)', en: '(-3, 3)' }
                     ],
-                    "correct": 0,
-                    "answer": {
-                        "ar": "تدخل هذه النماذج في دراسة وحل مشكلات النمو والتكاثر ونسب التغير في الطبيعة والصناعة.",
-                        "en": "These models are involved in studying and solving problems of growth, decay, and rates of change in nature and industry."
-                    }
+                    correct: 0,
+                    answer: { ar: 'هذه الدالة تكون معرفة فقط إذا كان x²-9 > 0 (بسبب الجذر في المقام)، وهذا يتحقق عندما x<-3 أو x>3، فمجال h(x) هو (-∞,-3)∪(3,∞)', en: 'This function is defined only if x²-9 > 0 (since the square root is in the denominator), which holds when x<-3 or x>3, so the domain of h(x) is (-∞,-3)∪(3,∞)' }
                 }
             ]
         },
         {
-            "title": {
-                "ar": "🔹 الجزء الخامس: دوال متعددة التعريف والمسائل العملية",
-                "en": "🔹 Part 5: دوال متعددة التعريف والمسائل العملية"
-            },
-            "questions": [
+            id: 'sec5',
+            title: { ar: '🔹 الجزء الخامس: الدوال متعددة التعريف', en: '🔹 Part 5: Piecewise-Defined Functions' },
+            questions: [
                 {
-                    "q": {
-                        "ar": "ما هو التحدي الرياضي والتحليل المنطقي المرتبط بـ دوال متعددة التعريف والمسائل العملية؟",
-                        "en": "What is the mathematical challenge and logical analysis associated with دوال متعددة التعريف والمسائل العملية?"
-                    },
-                    "options": [
-                        {
-                            "ar": "الربط العميق بين الأساليب الجبرية والتطبيقات البيانية وإثبات صحة النظريات والحلول علمياً",
-                            "en": "Deeply connecting algebraic methods with graphical applications and scientifically proving theories and solutions"
-                        },
-                        {
-                            "ar": "حفظ جميع الصيغ الرياضية غيباً دون الحاجة لفهم كيفية استنتاجها أو تطبيقها",
-                            "en": "Memorizing all mathematical formulas by heart without needing to understand how they are derived or applied"
-                        },
-                        {
-                            "ar": "إثبات أن جميع العمليات الحسابية يمكن اختزالها بالجمع الرياضي البسيط",
-                            "en": "Proving that all mathematical operations can be reduced to simple addition"
-                        },
-                        {
-                            "ar": "تجاهل الشروط الخاصة بتماثل المنحنيات لتبسيط الحلول",
-                            "en": "Ignoring curve symmetry conditions to simplify solutions"
-                        }
+                    q: { ar: 'ما تعريف "الدالة متعددة التعريف" (piecewise-defined function)؟', en: 'What is the definition of a "piecewise-defined function"?' },
+                    options: [
+                        { ar: 'دالة يمكن تعريفها باستخدام معادلتين أو أكثر لفترات مختلفة من المجال', en: 'A function that can be defined using two or more equations for different intervals of the domain' },
+                        { ar: 'دالة لها معادلة واحدة فقط تنطبق على كل المجال', en: 'A function that has only one equation applying to the entire domain' },
+                        { ar: 'دالة غير معرفة في أي جزء من مجالها', en: 'A function that is undefined for any part of its domain' },
+                        { ar: 'دالة تُستخدم فقط لتمثيل الأعداد السالبة', en: 'A function used only to represent negative numbers' }
                     ],
-                    "correct": 0,
-                    "answer": {
-                        "ar": "مهارات التفكير العليا تطلب الربط الواعي والفهم الشامل ومناقشة الحلول وبراهينها.",
-                        "en": "Higher-order thinking skills require conscious linking, comprehensive understanding, and discussing solutions and their proofs."
-                    }
+                    correct: 0,
+                    answer: { ar: 'الدالة متعددة التعريف هي الدالة التي يمكن تعريفها باستخدام معادلتين أو أكثر لفترات مختلفة من المجال', en: 'A piecewise-defined function is a function that can be defined using two or more equations for different intervals of the domain' }
                 },
                 {
-                    "q": {
-                        "ar": "كيف نبرهن بشكل منطقي صحة الحلول المقترحة لمشكلات دوال متعددة التعريف والمسائل العملية؟",
-                        "en": "How do we logically prove the validity of proposed solutions for دوال متعددة التعريف والمسائل العملية problems?"
-                    },
-                    "options": [
-                        {
-                            "ar": "باستخدام قوانين المنطق الرياضي والبراهين الجبرية المتعاقبة التي لا تقبل الشك",
-                            "en": "Using the laws of mathematical logic and sequential algebraic proofs that leave no room for doubt"
-                        },
-                        {
-                            "ar": "بأخذ رأي أغلبية الطلاب في الصف كمرجع لصحة الإجابة",
-                            "en": "By taking the opinion of the majority of classmates as a reference for the correct answer"
-                        },
-                        {
-                            "ar": "بمقارنتها بالحلول التقريبية للمقادير الهندسية في مجالات الفضاء",
-                            "en": "By comparing them with approximate solutions of geometric figures in space fields"
-                        },
-                        {
-                            "ar": "بافتراض أن جميع النماذج تتوافق تلقائياً مع الفرضيات الرياضية البسيطة",
-                            "en": "By assuming that all models automatically conform to simple mathematical hypotheses"
-                        }
+                    q: { ar: 'بالنسبة للدالة h(x) = 1.6x-105 لـ 160<x<167، و h(x)=3x-335 لـ 167≤x≤172، و h(x)=2x-167 لـ x>172، ما قيمة h(170)؟', en: 'For the function h(x) = 1.6x-105 for 160<x<167, h(x)=3x-335 for 167≤x≤172, and h(x)=2x-167 for x>172, what is h(170)?' },
+                    options: [
+                        { ar: '175', en: '175' },
+                        { ar: '167', en: '167' },
+                        { ar: '170', en: '170' },
+                        { ar: '182', en: '182' }
                     ],
-                    "correct": 0,
-                    "answer": {
-                        "ar": "البرهان الرياضي يقوم على التسلسل المنطقي والقوانين المثبتة سابقاً بعيداً عن العشوائية.",
-                        "en": "Mathematical proof is based on logical sequencing and previously proven laws, far from randomness."
-                    }
+                    correct: 0,
+                    answer: { ar: 'بما أن 170 يقع بين 167 و172، نستخدم h(x)=3x-335: h(170)=3(170)-335=510-335=175', en: 'Since 170 falls between 167 and 172, we use h(x)=3x-335: h(170)=3(170)-335=510-335=175' }
                 },
                 {
-                    "q": {
-                        "ar": "ما الذي يستنتجه الطالب المتميز بعد دراسته العميقة لـ دوال متعددة التعريف والمسائل العملية؟",
-                        "en": "What does an outstanding student conclude after a deep study of دوال متعددة التعريف والمسائل العملية?"
-                    },
-                    "options": [
-                        {
-                            "ar": "أن الرياضيات لغة متكاملة تصف الطبيعة بدقة وتوفر أدوات تحليل وحل لأعقد الظواهر المحيطة بنا",
-                            "en": "That mathematics is an integrated language describing nature accurately and providing tools to analyze and solve the most complex phenomena around us"
-                        },
-                        {
-                            "ar": "أن جميع المسائل الرياضية تم حلها سابقاً ولا حاجة للمزيد من الابتكار أو التطوير",
-                            "en": "That all mathematical problems have been solved previously and there is no need for further innovation or development"
-                        },
-                        {
-                            "ar": "أن النماذج الخطية كافية وحدها لتمثيل كل المتغيرات في الكون دون حاجة للنماذج اللاخطية",
-                            "en": "That linear models alone are sufficient to represent all variables in the universe without needing non-linear models"
-                        },
-                        {
-                            "ar": "أن دراسة الدوال تقتصر فائدتها على اجتياز الاختبارات المدرسية المحددة فقط",
-                            "en": "That studying functions is useful only for passing specific school examinations"
-                        }
+                    q: { ar: 'باستخدام نفس الدالة متعددة التعريف في السؤال السابق، ما قيمة h(182)؟', en: 'Using the same piecewise function from the previous question, what is h(182)?' },
+                    options: [
+                        { ar: '198', en: '198' },
+                        { ar: '175', en: '175' },
+                        { ar: '189', en: '189' },
+                        { ar: '203', en: '203' }
                     ],
-                    "correct": 0,
-                    "answer": {
-                        "ar": "الرياضيات هي أداة التفكير العلمي المنظم ولغة التطوير والابتكار التكنولوجي المستمر.",
-                        "en": "Mathematics is the tool of organized scientific thinking and the language of continuous technological development and innovation."
-                    }
+                    correct: 0,
+                    answer: { ar: 'بما أن 182 أكبر من 172، نستخدم h(x)=2x-167: h(182)=2(182)-167=364-167=198', en: 'Since 182 is greater than 172, we use h(x)=2x-167: h(182)=2(182)-167=364-167=198' }
                 },
                 {
-                    "q": {
-                        "ar": "كيف يسهم التفكير الإبداعي في تطوير وتطبيق نماذج دوال متعددة التعريف والمسائل العملية؟",
-                        "en": "How does creative thinking contribute to developing and applying models of دوال متعددة التعريف والمسائل العملية?"
-                    },
-                    "options": [
-                        {
-                            "ar": "بابتكار طرق حل جديدة واختصار الخطوات الطويلة ودمج المعارف والربط بين حقول العلوم المختلفة",
-                            "en": "By innovating new solution methods, shortcutting long steps, merging knowledge, and linking different fields of science"
-                        },
-                        {
-                            "ar": "بتصميم واجهات ملونة وغير منظمة لتبديد رتابة الرسوم البيانية القديمة",
-                            "en": "By designing colorful, unorganized interfaces to break the monotony of old graphs"
-                        },
-                        {
-                            "ar": "بالتخلي عن القوانين الجبرية الصارمة واعتماد الحدس الرياضي المباشر فقط",
-                            "en": "By abandoning strict algebraic laws and relying solely on direct mathematical intuition"
-                        },
-                        {
-                            "ar": "باستبدال الأرقام بالرموز التعبيرية التفاعلية الممتعة",
-                            "en": "By replacing numbers with fun, interactive expressive emojis"
-                        }
+                    q: { ar: 'عند إيجاد قيمة دالة متعددة التعريف عند نقطة معينة، ما الخطوة الأولى الصحيحة؟', en: 'When evaluating a piecewise-defined function at a certain point, what is the correct first step?' },
+                    options: [
+                        { ar: 'تحديد أي فترة من فترات المجال تقع فيها قيمة x المعطاة، ثم استخدام المعادلة الخاصة بتلك الفترة فقط', en: 'Determine which interval of the domain the given x value falls in, then use only the equation corresponding to that interval' },
+                        { ar: 'استخدام جميع المعادلات معاً وجمع نواتجها', en: 'Use all the equations together and add their results' },
+                        { ar: 'اختيار المعادلة الأولى دائماً بغض النظر عن قيمة x', en: 'Always choose the first equation regardless of the x value' },
+                        { ar: 'تجاهل شروط الفترات تماماً', en: 'Ignore the interval conditions entirely' }
                     ],
-                    "correct": 0,
-                    "answer": {
-                        "ar": "يسهم الإبداع في كسر الجمود الرياضي وتسهيل المعرفة وجعلها أكثر متعة وفائدة للبشرية.",
-                        "en": "Creativity contributes to breaking mathematical rigidity, facilitating knowledge, and making it more enjoyable and useful for humanity."
-                    }
+                    correct: 0,
+                    answer: { ar: 'يجب أولاً تحديد الفترة التي تقع فيها قيمة x المعطاة من بين فترات المجال المحددة، ثم استخدام المعادلة المرتبطة بتلك الفترة فقط لإيجاد قيمة الدالة', en: "First, determine which interval the given x value falls into among the specified domain intervals, then use only the equation associated with that interval to find the function's value" }
                 }
             ]
         }
@@ -816,6 +444,8 @@ function prepareShuffledExam() {
             globalIdx++;
         });
     });
+    
+    console.log('✅ تم خلط الأسئلة والخيارات بنجاح');
 }
 
 function reshuffleExam() {
@@ -852,8 +482,8 @@ function setLanguage(lang) {
 function renderExam() {
     const container = document.getElementById('exam-content');
     const labels = {
-        ar: { option: ['أ', 'ب', 'ج', 'د'], answer: '✅ الإجابة الصحيحة:' },
-        en: { option: ['A', 'B', 'C', 'D'], answer: '✅ Correct Answer:' }
+        ar: { option: ['أ', 'ب', 'ج', 'د'], answer: '✅ الإجابة:' },
+        en: { option: ['A', 'B', 'C', 'D'], answer: '✅ Answer:' }
     };
     const lbl = labels[currentLang];
     const isRTL = currentLang === 'ar';
@@ -864,13 +494,13 @@ function renderExam() {
     examData.sections.forEach((section) => {
         html += `
         <section class="bg-white p-6 rounded-xl shadow-lg">
-            <h2 class="text-xl font-bold mb-4 text-teal-700">${section.title[currentLang]}</h2>
+            <h2 class="text-xl font-bold mb-4 text-indigo-700">${section.title[currentLang]}</h2>
             <ol class="space-y-4 text-sm">`;
             
         section.questions.forEach((q) => {
             const borderSide = isRTL ? 'border-r-4 pr-4' : 'border-l-4 pl-4';
             html += `
-                <li class="${borderSide} border-teal-500 py-2" id="q-${globalIdx}">
+                <li class="${borderSide} border-indigo-500 py-2" id="q-${globalIdx}">
                     <strong>${globalIdx + 1}.</strong> ${q.q[currentLang]}<br>`;
                     
             q.options.forEach((opt, oIdx) => {
@@ -935,17 +565,15 @@ function gradeExam() {
                 correctCount++;
                 li.classList.add('correct');
                 li.classList.remove('incorrect');
-            } else {
-                li.classList.add('incorrect');
-                li.classList.remove('correct');
-            }
-
-            if (isCorrect) {
+                
                 if (i < 4) sec1++;
                 else if (i < 8) sec2++;
                 else if (i < 12) sec3++;
                 else if (i < 16) sec4++;
                 else sec5++;
+            } else {
+                li.classList.add('incorrect');
+                li.classList.remove('correct');
             }
         }
     }
@@ -953,7 +581,7 @@ function gradeExam() {
     const score = (correctCount / 20) * 100;
     const successRate = Math.round(score);
     
-    document.getElementById('res-total').textContent = `${successRate} / 100`;
+    document.getElementById('res-total').textContent = `${Math.round(score)} / 100`;
     document.getElementById('res-name').textContent = document.getElementById('studentName').value || (currentLang === 'ar' ? 'طالب' : 'Student');
     document.getElementById('res-date').textContent = new Date().toLocaleDateString(currentLang === 'ar' ? 'ar-AE' : 'en-US');
     
@@ -998,85 +626,74 @@ function sendResultsToEmail() {
     const badge = document.getElementById('success-badge').textContent;
 
     const sectionNames = {
-        ar: [
-            "الجزء الأول: المفاهيم والقواعد الأساسية والتعريفات",
-            "الجزء الثاني: العمليات الحسابية والحلول العددية الدقيقة",
-            "الجزء الثالث: المهارات المتقدمة والتطبيقات والمسائل",
-            "الجزء الرابع: النمذجة الرياضية والتمثيل البياني والمسائل العملية",
-            "الجزء الخامس: مهارات التفكير العليا والتحليل والربط المنطقي"
-        ],
-        en: [
-            "Part 1: Basic Concepts, Rules, and Definitions",
-            "Part 2: Calculations and Exact Numerical Solutions",
-            "Part 3: Advanced Skills, Applications, and Problems",
-            "Part 4: Mathematical Modeling, Graphing, and Practical Problems",
-            "Part 5: Higher-Order Thinking, Analysis, and Logical Connections"
-        ]
+        ar: ['وصف المجموعات برمز بناء المجموعة ورمز الفترة', 'تحديد الدوال واختبار الخط الرأسي', 'إيجاد قيم الدوال', 'إيجاد المجال جبرياً', 'الدوال متعددة التعريف'],
+        en: ['Describing Sets with Set-Builder & Interval Notation', 'Identifying Functions & the Vertical Line Test', 'Evaluating Functions', 'Finding Domain Algebraically', 'Piecewise-Defined Functions']
     };
     const currentSectionNames = sectionNames[currentLang];
 
     let answersHTML = `
-        <div style="font-family: 'Segoe UI', Tahoma, Arial, sans-serif; direction: \${currentLang === 'ar' ? 'rtl' : 'ltr'}; text-align: \${currentLang === 'ar' ? 'right' : 'left'};">
-            <div style="background: linear-gradient(135deg, #0d9488, #0891b2); color: white; padding: 20px; border-radius: 10px 10px 0 0; text-align: center;">
-                <h2 style="margin: 0; font-size: 22px;">⚡ \${currentLang === 'ar' ? 'نتيجة امتحان الرياضيات والتحليل التفاعلي' : 'Math Interactive Exam Result'}</h2>
-                <p style="margin: 5px 0 0 0; opacity: 0.9;">\${currentLang === 'ar' ? 'رياضيات الصف الثاني عشر عام | الفصل الدراسي الأول' : 'Grade 12 General Math | Term 1'}</p>
-                <p style="margin: 5px 0 0 0; font-size: 12px; opacity: 0.8;">🔀 \${currentLang === 'ar' ? 'تم خلط الأسئلة تلقائياً' : 'Questions were randomly shuffled'}</p>
+        <div style="font-family: 'Segoe UI', Tahoma, Arial, sans-serif; direction: ${currentLang === 'ar' ? 'rtl' : 'ltr'};">
+            <div style="background: linear-gradient(135deg, #4f46e5, #7c3aed); color: white; padding: 20px; border-radius: 10px 10px 0 0; text-align: center;">
+                <h2 style="margin: 0; font-size: 22px;">🧮 ${currentLang === 'ar' ? 'نتيجة امتحان الدوال' : 'Functions Exam Result'}</h2>
+                <p style="margin: 5px 0 0 0; opacity: 0.9;">${currentLang === 'ar' ? 'Functions' : 'Functions'}</p>
+                <p style="margin: 5px 0 0 0; font-size: 12px; opacity: 0.8;">🔀 ${currentLang === 'ar' ? 'تم خلط الأسئلة تلقائياً' : 'Questions were randomly shuffled'}</p>
             </div>
             
-            <div style="background: #f0fdfa; padding: 15px; border: 1px solid #99f6e4;">
+            <div style="background: #eef2ff; padding: 15px; border: 1px solid #c7d2fe;">
                 <table style="width: 100%; border-collapse: collapse;">
                     <tr>
-                        <td style="padding: 8px; font-weight: bold; color: #0f766e;">\${currentLang === 'ar' ? '👤 الاسم:' : '👤 Name:'}</td>
-                        <td style="padding: 8px;">\${name}</td>
-                        <td style="padding: 8px; font-weight: bold; color: #0f766e;">\${currentLang === 'ar' ? '🏫 الشعبة:' : '🏫 Class:'}</td>
-                        <td style="padding: 8px;">\${studentClass}</td>
+                        <td style="padding: 8px; font-weight: bold; color: #4338ca;">${currentLang === 'ar' ? '👤 الاسم:' : '👤 Name:'}</td>
+                        <td style="padding: 8px;">${name}</td>
+                        <td style="padding: 8px; font-weight: bold; color: #4338ca;">${currentLang === 'ar' ? '🏫 الشعبة:' : '🏫 Class:'}</td>
+                        <td style="padding: 8px;">${studentClass}</td>
                     </tr>
                     <tr>
-                        <td style="padding: 8px; font-weight: bold; color: #0f766e;">\${currentLang === 'ar' ? '📅 التاريخ:' : '📅 Date:'}</td>
-                        <td style="padding: 8px;">\${date}</td>
-                        <td style="padding: 8px; font-weight: bold; color: #0f766e;">\${currentLang === 'ar' ? '🏆 التقدير:' : '🏆 Grade:'}</td>
-                        <td style="padding: 8px;">\${badge}</td>
+                        <td style="padding: 8px; font-weight: bold; color: #4338ca;">${currentLang === 'ar' ? '📅 التاريخ:' : '📅 Date:'}</td>
+                        <td style="padding: 8px;">${date}</td>
+                        <td style="padding: 8px; font-weight: bold; color: #4338ca;">${currentLang === 'ar' ? '🏆 التقدير:' : '🏆 Grade:'}</td>
+                        <td style="padding: 8px;">${badge}</td>
                     </tr>
                 </table>
             </div>
 
             <div style="background: white; padding: 20px; text-align: center; border-bottom: 2px solid #e5e7eb;">
                 <div style="display: inline-block; margin: 0 15px;">
-                    <div style="font-size: 32px; font-weight: bold; color: #0d9488;">\${score}</div>
-                    <div style="color: #6b7280; font-size: 13px;">\${currentLang === 'ar' ? 'الدرجة الكلية' : 'Total Score'}</div>
+                    <div style="font-size: 32px; font-weight: bold; color: #4f46e5;">${score}</div>
+                    <div style="color: #6b7280; font-size: 13px;">${currentLang === 'ar' ? 'الدرجة الكلية' : 'Total Score'}</div>
                 </div>
                 <div style="display: inline-block; margin: 0 15px;">
-                    <div style="font-size: 32px; font-weight: bold; color: #059669;">\${successRate}%</div>
-                    <div style="color: #6b7280; font-size: 13px;">\${currentLang === 'ar' ? 'نسبة النجاح' : 'Success Rate'}</div>
+                    <div style="font-size: 32px; font-weight: bold; color: #059669;">${successRate}%</div>
+                    <div style="color: #6b7280; font-size: 13px;">${currentLang === 'ar' ? 'نسبة النجاح' : 'Success Rate'}</div>
                 </div>
             </div>
 
             <h3 style="background: #f3f4f6; padding: 12px; margin: 0; color: #1f2937; border-bottom: 2px solid #d1d5db;">
-                \${currentLang === 'ar' ? '📝 تفاصيل الإجابات' : '📝 Answer Details'}
+                📝 ${currentLang === 'ar' ? 'تفاصيل الإجابات' : 'Answer Details'}
             </h3>
             <table style="width: 100%; border-collapse: collapse; font-size: 13px;">
                 <thead>
-                    <tr style="background: #0d9488; color: white;">
-                        <th style="padding: 10px; border: 1px solid #0b7d73; width: 8%;">#</th>
-                        <th style="padding: 10px; border: 1px solid #0b7d73; width: 32%;">\${currentLang === 'ar' ? 'القسم' : 'Section'}</th>
-                        <th style="padding: 10px; border: 1px solid #0b7d73; width: 15%;">\${currentLang === 'ar' ? 'الإجابة' : 'Answer'}</th>
-                        <th style="padding: 10px; border: 1px solid #0b7d73; width: 15%;">\${currentLang === 'ar' ? 'الصحيحة' : 'Correct'}</th>
-                        <th style="padding: 10px; border: 1px solid #0b7d73; width: 15%;">\${currentLang === 'ar' ? 'النتيجة' : 'Status'}</th>
+                    <tr style="background: #4f46e5; color: white;">
+                        <th style="padding: 10px; border: 1px solid #4338ca; width: 8%;">#</th>
+                        <th style="padding: 10px; border: 1px solid #4338ca; width: 32%;">${currentLang === 'ar' ? 'القسم' : 'Section'}</th>
+                        <th style="padding: 10px; border: 1px solid #4338ca; width: 15%;">${currentLang === 'ar' ? 'الإجابة' : 'Answer'}</th>
+                        <th style="padding: 10px; border: 1px solid #4338ca; width: 15%;">${currentLang === 'ar' ? 'الصحيحة' : 'Correct'}</th>
+                        <th style="padding: 10px; border: 1px solid #4338ca; width: 15%;">${currentLang === 'ar' ? 'النتيجة' : 'Status'}</th>
                     </tr>
                 </thead>
                 <tbody>
     `;
 
-    let sectionScores = [sec1, sec2, sec3, sec4, sec5];
+    let sectionScores = [0, 0, 0, 0, 0];
     let sectionTotals = [4, 4, 4, 4, 4];
 
     for (let i = 0; i < 20; i++) {
-        const selected = document.querySelector(`input[name="q\${i}"]:checked`);
+        const selected = document.querySelector(`input[name="q${i}"]:checked`);
         const selectedValue = selected ? selected.value : '-';
         const correctValue = correctAnswersMap[i];
         const isCorrect = selectedValue === correctValue;
         
         const sectionIndex = Math.floor(i / 4);
+        if (isCorrect) sectionScores[sectionIndex]++;
 
         const rowBg = i % 2 === 0 ? '#f9fafb' : '#ffffff';
         const statusBg = isCorrect ? '#dcfce7' : '#fee2e2';
@@ -1087,13 +704,13 @@ function sendResultsToEmail() {
             : (currentLang === 'ar' ? 'خطأ' : 'Wrong');
 
         answersHTML += `
-            <tr style="background: \${rowBg};">
-                <td style="padding: 8px; border: 1px solid #e5e7eb; text-align: center; font-weight: bold;">\${i + 1}</td>
-                <td style="padding: 8px; border: 1px solid #e5e7eb;">\${currentSectionNames[sectionIndex]}</td>
-                <td style="padding: 8px; border: 1px solid #e5e7eb; text-align: center; font-weight: bold;">\${selectedValue.toUpperCase()}</td>
-                <td style="padding: 8px; border: 1px solid #e5e7eb; text-align: center; font-weight: bold; color: #059669;">\${correctValue.toUpperCase()}</td>
-                <td style="padding: 8px; border: 1px solid #e5e7eb; text-align: center; background: \${statusBg}; color: \${statusColor}; font-weight: bold;">
-                    \${statusIcon} \${statusText}
+            <tr style="background: ${rowBg};">
+                <td style="padding: 8px; border: 1px solid #e5e7eb; text-align: center; font-weight: bold;">${i + 1}</td>
+                <td style="padding: 8px; border: 1px solid #e5e7eb;">${currentSectionNames[sectionIndex]}</td>
+                <td style="padding: 8px; border: 1px solid #e5e7eb; text-align: center; font-weight: bold;">${selectedValue.toUpperCase()}</td>
+                <td style="padding: 8px; border: 1px solid #e5e7eb; text-align: center; font-weight: bold; color: #059669;">${correctValue.toUpperCase()}</td>
+                <td style="padding: 8px; border: 1px solid #e5e7eb; text-align: center; background: ${statusBg}; color: ${statusColor}; font-weight: bold;">
+                    ${statusIcon} ${statusText}
                 </td>
             </tr>
         `;
@@ -1103,15 +720,15 @@ function sendResultsToEmail() {
                 </tbody>
             </table>
 
-            <h3 style="background: #f3f4f6; padding: 12px; margin: 0; color: #1f2937; border-bottom: 2px solid #d1d5db; border-top: 3px solid #0d9488;">
-                📊 \${currentLang === 'ar' ? 'تفصيل الأداء' : 'Performance Breakdown'}
+            <h3 style="background: #f3f4f6; padding: 12px; margin: 0; color: #1f2937; border-bottom: 2px solid #d1d5db; border-top: 3px solid #4f46e5;">
+                📊 ${currentLang === 'ar' ? 'تفصيل الأداء' : 'Performance Breakdown'}
             </h3>
             <table style="width: 100%; border-collapse: collapse; font-size: 13px;">
                 <thead>
                     <tr style="background: #7c3aed; color: white;">
-                        <th style="padding: 10px; border: 1px solid #6d28d9;">\${currentLang === 'ar' ? 'القسم' : 'Section'}</th>
-                        <th style="padding: 10px; border: 1px solid #6d28d9; width: 20%;">\${currentLang === 'ar' ? 'النتيجة' : 'Score'}</th>
-                        <th style="padding: 10px; border: 1px solid #6d28d9; width: 20%;">\${currentLang === 'ar' ? 'النسبة' : 'Percentage'}</th>
+                        <th style="padding: 10px; border: 1px solid #6d28d9;">${currentLang === 'ar' ? 'القسم' : 'Section'}</th>
+                        <th style="padding: 10px; border: 1px solid #6d28d9; width: 20%;">${currentLang === 'ar' ? 'النتيجة' : 'Score'}</th>
+                        <th style="padding: 10px; border: 1px solid #6d28d9; width: 20%;">${currentLang === 'ar' ? 'النسبة' : 'Percentage'}</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -1123,16 +740,16 @@ function sendResultsToEmail() {
         const rowBg = i % 2 === 0 ? '#f9fafb' : '#ffffff';
         
         answersHTML += `
-            <tr style="background: \${rowBg};">
-                <td style="padding: 10px; border: 1px solid #e5e7eb; font-weight: 600;">\${currentSectionNames[i]}</td>
-                <td style="padding: 10px; border: 1px solid #e5e7eb; text-align: center; font-weight: bold; color: #0d9488;">
-                    \${sectionScores[i]} / \${sectionTotals[i]}
+            <tr style="background: ${rowBg};">
+                <td style="padding: 10px; border: 1px solid #e5e7eb; font-weight: 600;">${currentSectionNames[i]}</td>
+                <td style="padding: 10px; border: 1px solid #e5e7eb; text-align: center; font-weight: bold; color: #4f46e5;">
+                    ${sectionScores[i]} / ${sectionTotals[i]}
                 </td>
                 <td style="padding: 10px; border: 1px solid #e5e7eb;">
                     <div style="background: #e5e7eb; border-radius: 10px; overflow: hidden; height: 20px; position: relative;">
-                        <div style="background: \${barColor}; width: \${percentage}%; height: 100%;"></div>
-                        <span style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); font-size: 12px; font-weight: bold; color: #1f2937;">
-                            \${percentage}%
+                        <div style="background: ${barColor}; width: ${percentage}%; height: 100%;"></div>
+                        <span style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); font-size: 11px; font-weight: bold; color: #1f2937;">
+                            ${percentage}%
                         </span>
                     </div>
                 </td>
@@ -1146,8 +763,8 @@ function sendResultsToEmail() {
 
             <div style="background: linear-gradient(135deg, #fef3c7, #fde68a); padding: 15px; border-radius: 0 0 10px 10px; border-top: 2px solid #f59e0b;">
                 <p style="margin: 0; color: #78350f; text-align: center; font-size: 13px;">
-                    💡 <strong>\${currentLang === 'ar' ? 'ملاحظة:' : 'Note:'}</strong> 
-                    \${currentLang === 'ar' 
+                    💡 <strong>${currentLang === 'ar' ? 'ملاحظة:' : 'Note:'}</strong> 
+                    ${currentLang === 'ar' 
                         ? 'تم إرسال هذا التقرير تلقائياً من منصة 4U التعليمية | Mr. Mohammed Hesham' 
                         : 'This report was automatically sent from 4U Educational Platform | Mr. Mohammed Hesham'}
                 </p>
